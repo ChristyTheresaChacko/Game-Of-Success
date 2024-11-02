@@ -21,6 +21,13 @@ We’ve designed an engaging game that explores the insights of life through pla
 
 As you pop each bubble, you collect two numbers to remember. In the next round, you’ll rearrange those numbers, symbolizing how we must organize and apply knowledge at the right moment. 
 
+Technical Details:
+
+*Languages Used: Python , JavaScript 
+*Others : HTML, CSS, Gemini AI
+*Framework Used: Flask
+*Tools Used: VSCode, Dropbox, Github
+
 The adventure culminates in a surprise shooter game, where you face challenges using what you’ve learned. This round reinforces that life is about learning, applying knowledge, and unlocking new experiences.
 
 In short, this game teaches that life is an adventurous journey where learning and timely application lead to greater rewards. Get ready for the adventure ahead!.
