@@ -13,7 +13,7 @@ def getModel():
 
 
 app = Flask(__name__)
-resourceData = { "resource1": 100, "resource2": 120 }
+resourceData = { "resource1": 1683, "resource2": 4265 }
 
 @app.route('/')
 def index():
@@ -30,7 +30,7 @@ def index():
 @app.route('/puzzle', methods=['POST'])
 def getResourceData():
     resourceData = request.json
-    print("DATA : ", resourceData)
+    print("DATA : ",resourceData)
     return jsonify({'message': 'Data received successfully'})
 
 @app.route('/puzzle', methods=['GET'])
