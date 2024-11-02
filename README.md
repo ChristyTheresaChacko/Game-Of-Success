@@ -57,6 +57,8 @@ API Documentation: Gemini AI api was used for fact generation.
 Screenshots:
 
 Demo Video:
+https://www.loom.com/share/13ecbc402c1a41d6819b4254ef78386f
+
 
 Team Contribution:
 Nithish : Developed three games for the project.
