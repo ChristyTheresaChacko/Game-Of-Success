@@ -17,7 +17,10 @@ The Problem:
 Nobody would ever say "Life's a thrilling adventure: learn, apply, and unlock endless surprises!" in such an engaging and fun way.
 
 The Solution: 
+We’ve designed an engaging game that explores the insights of life through play. You start in a colorful world of bubbles, each representing a piece of knowledge. Player can pop two bubbles which represents, instead of trying to absorb everything at once, you focus on just one or two skills at a time, which is very much needed in our life too.
 
-We presented a fun game to realize the insight of life .
-Starting from a game with random motion of bubbles represent the knowledge facts around us. Instead of getting into acquriring whole knowledge we must acquire 1 or 2 skills at a time. Each bubble represents a fact and bubbles present you two numbers which must be kept in mind .
-The second part contains a game with the numbers yoy collected in first round from the facts.
+As you pop each bubble, you collect two numbers to remember. In the next round, you’ll rearrange those numbers, symbolizing how we must organize and apply knowledge at the right moment. 
+
+The adventure culminates in a surprise shooter game, where you face challenges using what you’ve learned. This round reinforces that life is about learning, applying knowledge, and unlocking new experiences.
+
+In short, this game teaches that life is an adventurous journey where learning and timely application lead to greater rewards. Get ready for the adventure ahead!.
