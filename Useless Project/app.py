@@ -1,20 +1,51 @@
-from flask import Flask, render_template
+
+import google.generativeai as genai
+from flask import Flask, render_template, request, jsonify
+
+FACT_COUNT = 2
+facts = []
+
+def getModel():
+  genai.configure(api_key="API_KEY")
+  model = genai.GenerativeModel("gemini-1.5-flash")
+  return model
+  return response.text
+
 
 app = Flask(__name__)
+resourceData = { "resource1": 100, "resource2": 120 }
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
-    return render_template("index.html")
+    animals = ["Giraffe", "Donkey", "Monkey"]
+    facts = []
+    model = getModel()
+    for i in range(FACT_COUNT):
+        prompt = "Give a random and distinct fun fact about" + animals[i]
+        response = model.generate_content(prompt)
+        randomFact = response.text
+        facts.append(randomFact)
+    return render_template("part1.html", data=facts)
 
+@app.route('/puzzle', methods=['POST'])
+def getResourceData():
+    resourceData = request.json
+    print("DATA : ", resourceData)
+    return jsonify({'message': 'Data received successfully'})
 
-@app.route('/page1', methods=['GET', 'POST'])
-def page1():
-    return render_template("page1.html")
+@app.route('/puzzle', methods=['GET'])
+def puzzle():
+    return render_template("part2.html", data=resourceData)
+
+@app.route('/rewardGame')
+def rewardGame():
+    return render_template("part3.html")
 
 
 if __name__ == '__main__':
+    app.run(debug=True)
 
-    
+
     
     
     

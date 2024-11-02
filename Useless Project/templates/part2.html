@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/part2.css') }}">
+    <script type="module" src="{{ url_for('static', filename='scripts/part2.js') }}" defer></script>
+</head>
+<body>
+    <h2>Find the proper order of the digits</h2>
+    <p>Drag and drop the digits in the proper order to the green container</p>
+    <p>Order is random and need to be guessed correctly to unlock a secret</p>
+    <div class="container"></div>
+    <div class="container target"></div>
+
+    <div id="resultPage">
+        <h1>Congratulations!</h1>
+        <p>You correctly found the secret code</p>
+        <button>Go to the reward game</button>
+    </div>
+    <script>
+        const resourceData = {{ data|tojson }};
+    </script>
+</body>
+</html>
