@@ -57,7 +57,7 @@ API Documentation: Gemini AI api was used for fact generation.
 Screenshots:
 
 Demo Video:
-https://www.loom.com/share/13ecbc402c1a41d6819b4254ef78386f
+https://www.loom.com/share/52bf64ee5f1d4a9ca9dd806487722978?sid=4c336800-3d40-46fa-9730-df196e2fc181
 
 
 Team Contribution:
