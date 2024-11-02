@@ -19,7 +19,11 @@ Nobody would ever say "Life's a thrilling adventure: learn, apply, and unlock en
 The Solution: 
 We’ve designed an engaging game that explores the insights of life through play. You start in a colorful world of bubbles, each representing a piece of knowledge. Player can pop two bubbles which represents, instead of trying to absorb everything at once, you focus on just one or two skills at a time, which is very much needed in our life too.
 
-As you pop each bubble, you collect two numbers to remember. In the next round, you’ll rearrange those numbers, symbolizing how we must organize and apply knowledge at the right moment. 
+As you pop each bubble, you collect two numbers to remember. In the next round, you’ll rearrange those numbers, symbolizing how we must organize and apply knowledge at the right moment.
+
+The adventure culminates in a surprise shooter game, where you face challenges using what you’ve learned. This round reinforces that life is about learning, applying knowledge, and unlocking new experiences.
+
+In short, this game teaches that life is an adventurous journey where learning and timely application lead to greater rewards. Get ready for the adventure ahead!.
 
 Technical Details:
 
@@ -28,6 +32,34 @@ Technical Details:
 *Framework Used: Flask
 *Tools Used: VSCode, Dropbox, Github
 
-The adventure culminates in a surprise shooter game, where you face challenges using what you’ve learned. This round reinforces that life is about learning, applying knowledge, and unlocking new experiences.
+Installation:
 
-In short, this game teaches that life is an adventurous journey where learning and timely application lead to greater rewards. Get ready for the adventure ahead!.
+pip install Flask
+pip install googleGenerativeAI
+
+Run:
+
+puthon app.py
+
+Project Documentation:
+
+1. Project Overview
+Project Title: Game Of Success.
+Description: Mentioned in intrduction.
+Stakeholders: Anyone interested to play game ,spend time in a fun way
+2. Requirements
+Functional Requirements: 3 GAMES.
+Non-functional Requirements: Reliabitity,security,Speed
+User Stories: User can play the according to details provided.
+3. Implementation
+API Documentation: Gemini AI api was used for fact generation.
+
+Screenshots:
+
+Demo Video:
+
+Team Contribution:
+Nithish : Developed three games for the project.
+Christy: Generated and connection of Gemini AI ,documented contents and handled github. 
+
+Made with love at Tinkerhub Useless Projects.
