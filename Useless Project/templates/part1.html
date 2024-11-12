@@ -4,113 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catch The Ball</title>
-    <link rel="stylesheet" href="../static/part1.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/part1.css') }}">
+    <script type="module" src="{{ url_for('static', filename='scripts/part1.js') }}" defer></script>
 </head>
 <body>
-
-<p id="title">Catch the moving balls</p>
-<canvas id="canvas"></canvas>
-
+    <p id="title">Catch the moving balls</p>
+    <canvas id="canvas"></canvas>
+    <div id="fact"></div>
+    <div id="resultPage">
+        <h1>Congratulations!</h1>
+        <p>You obtained 2 resources</p>
+        <button>Go to the the puzzle</button>
+    </div>  
+    <script>
+        const facts = {{ data|tojson }};
+    </script>
 </body>
-
-<script type="module">
-
-import { createConfetti } from "../scripts/confetti.js"
-
-const canvas = document.querySelector("#canvas");
-const container = document.querySelector("#container");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-let confetti = [];
-
-function getRandomValueBetween(min, max, exceptions = [0, -1, 1])
-{
-    let value = Math.random() * (max - min) + min;
-    while(exceptions.includes(Math.round(value)))   
-        value = Math.random() * (max - min) + min;
-    return value;
-}
-
-function createNumberBall(number)
-{
-    const MAX_SPEED = 4;
-    let ball = document.createElement("span");
-    ball.classList.add("ball");
-    
-    let randomValue = Math.floor(Math.random() * 360);  
-    let randomColor = `hsl(${randomValue}, 80%, 50%)`;
-
-    ball.style.backgroundColor = randomColor;
-    ball.setAttribute("anim", false);
-    ball.setAttribute("directionX", getRandomValueBetween(-MAX_SPEED, MAX_SPEED));
-    ball.setAttribute("directionY", getRandomValueBetween(-MAX_SPEED, MAX_SPEED));
-    ball.addEventListener("click", (event) => {
-        const pos = {
-            x : event.clientX,
-            y : event.clientY
-        }
-        createConfetti(ctx, confetti, pos, 100, 200);
-        document.body.removeChild(ball);
-    });
-
-    document.body.appendChild(ball);
-    return ball;
-}
-
-function animateBall(ball, speed=1)
-{
-    let x = parseInt(ball.offsetLeft);
-    let y = parseInt(ball.offsetTop);
-    let size = ball.offsetWidth;
-    let dirX = ball.getAttribute("directionX");
-    let dirY = ball.getAttribute("directionY");
-    let destX = x + dirX * speed;
-    let destY = y + dirY * speed;
-    if(destX < 0)
-    {
-        destX = 0;
-        ball.setAttribute("directionX", dirX * -1);
-    }
-    else if(destX > (innerWidth - size))
-    {
-        destX = innerWidth - size;
-        ball.setAttribute("directionX", dirX * -1);
-    }
-    if(destY < 0)
-    {
-        destY = 0;
-        ball.setAttribute("directionY", dirY * -1);
-    }
-    else if(destY > innerHeight - size)
-    {
-        destY = innerHeight - size;
-        ball.setAttribute("directionY", dirY * -1);
-    }
-    ball.style.left = `${destX}px`
-    ball.style.top = `${destY}px`
-}
-
-
-let balls = [];
-for(let i=0; i < 10; i++)
-    balls.push(createNumberBall(Math.floor(Math.random() * 30 + 1)));
-
-function animate()
-{
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    balls.forEach(ball => animateBall(ball))
-    confetti.forEach(confette => { 
-        confette.draw();
-        confette.update();
-    });
-    confetti = confetti.filter(confette => !confette.isRemovable());
-    requestAnimationFrame(animate);
-}
-
-requestAnimationFrame(animate);
-
-
-</script>
 </html>
